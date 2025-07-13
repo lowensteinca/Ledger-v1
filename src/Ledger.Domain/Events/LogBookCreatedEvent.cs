@@ -1,10 +1,10 @@
-// src/LifeLedger.Domain/Events/LogBookCreated.cs
-using LifeLedger.Domain.Enums;
-using LifeLedger.Domain.Relations;
+// src/Ledger.Domain/Events/LogBookCreated.cs
+using Ledger.Domain.Enums;
+using Ledger.Domain.Relations;
 
-namespace LifeLedger.Domain.Events;
+namespace Ledger.Domain.Events;
 
-public record LogBookCreatedEvent(LogBookId logBookId, LogType logType, string title) : IDomainEvent
+public record LogBookCreatedEvent(LogBookId logBookId, UserId userId, string title) : IDomainEvent
 {
     public Guid Id { get; } = Guid.NewGuid();
     public DateTime OccurredOn { get; } = DateTime.UtcNow;

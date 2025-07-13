@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Building and testing LifeLedger..."
+echo "Building and testing Ledger..."
 
 # Clean solution
 echo "🧹 Cleaning solution..."

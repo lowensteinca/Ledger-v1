@@ -4,7 +4,7 @@ mkdir -p scripts
 cat > scripts/setupdevenv.sh << 'EOF'
 #!/bin/bash
 
-echo "Setting up LifeLedger development environment..."
+echo "Setting up Ledger development environment..."
 
 # Function to check if command exists
 command_exists() {
@@ -51,11 +51,11 @@ sleep 30
 
 # Create database and run migrations
 echo "Creating database and running migrations..."
-dotnet ef database update --project src/LifeLedger.Infrastructure --startup-project src/LifeLedger.Web
+dotnet ef database update --project src/Ledger.Infrastructure --startup-project src/Ledger.Web
 
 echo "✅ Development environment setup complete!"
 echo "📝 Next steps:"
-echo "   1. Run 'dotnet run --project src/LifeLedger.Web' to start the API"
+echo "   1. Run 'dotnet run --project src/Ledger.Web' to start the API"
 echo "   2. Open https://localhost:7000/swagger for API documentation"
 echo "   3. Open https://localhost:15672 for RabbitMQ management (admin/password)"
 echo "   4. Connect to PostgreSQL at localhost:5432 (postgres/yourpassword)"

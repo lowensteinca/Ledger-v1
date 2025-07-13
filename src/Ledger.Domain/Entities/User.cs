@@ -1,9 +1,9 @@
 // src/Ledger.Domain/Entities/User.cs
 using System.Diagnostics.Contracts;
-using LifeLedger.Domain.Events;
-using LifeLedger.Domain.Relations;
+using Ledger.Domain.Events;
+using Ledger.Domain.Relations;
 
-namespace LifeLedger.Domain.Entities;
+namespace Ledger.Domain.Entities;
 
 public class User : BaseEntity<UserId>
 {

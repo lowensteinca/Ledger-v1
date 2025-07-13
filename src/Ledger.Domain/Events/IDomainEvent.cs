@@ -1,7 +1,7 @@
-// src/LifeLedger.Domain/Events/IDomainEvent.cs
+// src/Ledger.Domain/Events/IDomainEvent.cs
 using MediatR;
 
-namespace LifeLedger.Domain.Events;
+namespace Ledger.Domain.Events;
 
 public interface IDomainEvent : INotification
 {

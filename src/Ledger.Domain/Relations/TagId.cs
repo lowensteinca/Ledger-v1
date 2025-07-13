@@ -1,5 +1,5 @@
-// src/LifeLedger.Domain/Relations/TagId.cs
-namespace LifeLedger.Domain.Relations;
+// src/Ledger.Domain/Relations/TagId.cs
+namespace Ledger.Domain.Relations;
 
 public record TagId(Guid Value)
 {

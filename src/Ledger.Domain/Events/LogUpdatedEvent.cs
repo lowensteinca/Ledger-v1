@@ -1,8 +1,8 @@
-// src/LifeLedger.Domain/Events/LogUpdatedEvent.cs
-using LifeLedger.Domain.Enums;
-using LifeLedger.Domain.Relations;
+// src/Ledger.Domain/Events/LogUpdatedEvent.cs
+using Ledger.Domain.Enums;
+using Ledger.Domain.Relations;
 
-namespace LifeLedger.Domain.Events;
+namespace Ledger.Domain.Events;
 
 public record LogUpdatedEvent(LogId logId, LogBookId logBookId, LogType logType, string title) : IDomainEvent
 {

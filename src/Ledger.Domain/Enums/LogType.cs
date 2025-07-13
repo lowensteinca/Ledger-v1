@@ -1,5 +1,5 @@
-// src/LifeLedger.Domain/Enums/LogType.cs
-namespace LifeLedger.Domain.Enums;
+// src/Ledger.Domain/Enums/LogType.cs
+namespace Ledger.Domain.Enums;
 
 public enum LogType
 {

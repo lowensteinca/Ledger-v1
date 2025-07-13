@@ -2,22 +2,22 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copy csproj files and restore dependencies
-COPY ["src/LifeLedger.Web/LifeLedger.Web.csproj", "src/LifeLedger.Web/"]
-COPY ["src/LifeLedger.Application/LifeLedger.Application.csproj", "src/LifeLedger.Application/"]
-COPY ["src/LifeLedger.Domain/LifeLedger.Domain.csproj", "src/LifeLedger.Domain/"]
-COPY ["src/LifeLedger.Infrastructure/LifeLedger.Infrastructure.csproj", "src/LifeLedger.Infrastructure/"]
+COPY ["src/Ledger.Web/Ledger.Web.csproj", "src/Ledger.Web/"]
+COPY ["src/Ledger.Application/Ledger.Application.csproj", "src/Ledger.Application/"]
+COPY ["src/Ledger.Domain/Ledger.Domain.csproj", "src/Ledger.Domain/"]
+COPY ["src/Ledger.Infrastructure/Ledger.Infrastructure.csproj", "src/Ledger.Infrastructure/"]
 COPY ["Directory.Build.props", "./"]
 
-RUN dotnet restore "src/LifeLedger.Web/LifeLedger.Web.csproj"
+RUN dotnet restore "src/Ledger.Web/Ledger.Web.csproj"
 
 # Copy source code and build
 COPY . .
-WORKDIR "/app/src/LifeLedger.Web"
-RUN dotnet build "LifeLedger.Web.csproj" -c Release -o /app/build
+WORKDIR "/app/src/Ledger.Web"
+RUN dotnet build "Ledger.Web.csproj" -c Release -o /app/build
 
 # Publish stage
 FROM build AS publish
-RUN dotnet publish "LifeLedger.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Ledger.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
@@ -38,4 +38,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 ENV ASPNETCORE_HTTP_PORTS=8080
 ENV DOTNET_EnableDiagnostics=0
 
-ENTRYPOINT ["dotnet", "LifeLedger.Web.dll"]
+ENTRYPOINT ["dotnet", "Ledger.Web.dll"]

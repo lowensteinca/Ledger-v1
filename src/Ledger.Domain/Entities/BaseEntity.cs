@@ -1,7 +1,7 @@
-// src/LifeLedger.Domain/Entities/BaseEntity.cs
-using LifeLedger.Domain.Events;
+// src/Ledger.Domain/Entities/BaseEntity.cs
+using Ledger.Domain.Events;
 
-namespace LifeLedger.Domain.Entities;
+namespace Ledger.Domain.Entities;
 
 public abstract class BaseEntity<TId> : IEquatable<BaseEntity<TId>>
 {
